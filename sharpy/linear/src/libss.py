@@ -368,7 +368,7 @@ class StateSpace:
 
         """
         if self.dt:
-            self = disc2cont(self)
+            self.__dict__.update(disc2cont(self).__dict__)
 
     def retain_inout_channels(self, retain_channels, where):
         """
